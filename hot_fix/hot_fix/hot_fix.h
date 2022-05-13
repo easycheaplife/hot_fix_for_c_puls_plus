@@ -1,8 +1,6 @@
-struct FIXTABLE 
-{
-	void* new_func;
-    void* old_func;
-};
+#include <iostream>
+#include <vector>
+#include <string>
 
 int init_hot_fix_signal(); 
 

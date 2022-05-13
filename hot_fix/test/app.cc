@@ -7,7 +7,7 @@ int need_fix_func()
 {
     cout << "before fix_func addr : " << (void*)&need_fix_func <<endl;
 
-    int times = 10;
+    int times = 5;
     for (int i = 0; i < times; i++) 
     {
         cout << "before fix cur times " << i << endl;

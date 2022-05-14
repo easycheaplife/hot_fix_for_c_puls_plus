@@ -80,9 +80,15 @@ static void do_fix(int signum)
 	char name_mangling[] = "_Z13need_fix_funcv";
 	void* fix_fun_address = find_func_symbol(patch_path, name_mangling);
 	void* need_fix_fun_address = find_func_symbol(need_patch_path, name_mangling);   
-	cout << "fix_fun_address:" << fix_fun_address << "need_fix_fun_address:" << need_fix_fun_address << endl;
 	int ret = fix_func(fix_fun_address, need_fix_fun_address);  
 	cout << "fix result ret " << ret << endl;      
+
+	char class_member_name_mangling[] = "_ZN8FixClass14fix_member_funEi";
+	void* fix_class_member_fun_address = find_func_symbol(patch_path, class_member_name_mangling);
+	void* need_fix_class_member_fun_address = find_func_symbol(need_patch_path, class_member_name_mangling);   
+	ret = fix_func(fix_class_member_fun_address, need_fix_class_member_fun_address);  
+	cout << "fix class member result ret " << ret << endl;      
+
     return;
 }
 
